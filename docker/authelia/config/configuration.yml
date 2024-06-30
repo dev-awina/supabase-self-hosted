@@ -91,7 +91,7 @@ access_control:
         - "auth.heytoki.com"
       policy: bypass
     - domain: "studio.heytoki.com"
-      policy: one_factor
+      policy: two_factor
 
 session:
   ## The name of the session cookie.
