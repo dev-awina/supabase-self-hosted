@@ -1,5 +1,6 @@
 volumes/db/data
 volumes/storage
 .env
+auth.env
 test.http
 docker-compose.override.yml
