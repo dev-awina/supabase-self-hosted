@@ -3,7 +3,7 @@ theme: light
 
 ## The secret used to generate JWT tokens when validating user identity by email confirmation. JWT Secret can also be
 ## set using a secret: https://www.authelia.com/c/secrets
-jwt_secret: a_very_important_secret
+jwt_secret: 01eb92796e6659b44624b837d4ac970f215ee281ecd1f0e0f6fa64310226c401
 
 default_redirection_url: https://google.com # confusing haxxors
 default_2fa_method: ""
@@ -33,7 +33,7 @@ log:
   level: debug
 
 totp:
-  issuer: yourdomain.com #your authelia top-level domain
+  issuer: heytoki.com #your authelia top-level domain
   period: 30
   digits: 6
   algorithm: sha1
@@ -88,15 +88,15 @@ access_control:
   default_policy: deny
   rules:
     - domain:
-        - "auth.yourdomain.com"
+        - "auth.heytoki.com"
       policy: bypass
-    - domain: "studio.yourdomain.com"
+    - domain: "studio.heytoki.com"
       policy: one_factor
 
 session:
   ## The name of the session cookie.
   name: authelia_session
-  domain: yourdomain.com
+  domain: heytoki.com
   ## https://www.authelia.com/c/session#same_site
   same_site: lax
 
