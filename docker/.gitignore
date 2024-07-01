@@ -2,5 +2,8 @@ volumes/db/data
 volumes/storage
 .env
 auth.env
+dev.env
+prod.env
+
 test.http
 docker-compose.override.yml
