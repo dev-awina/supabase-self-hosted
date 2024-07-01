@@ -33,7 +33,7 @@ log:
   level: debug
 
 totp:
-  issuer: dev.awina.ch #your authelia top-level domain
+  issuer: awina.ch #your authelia top-level domain
   period: 30
   digits: 6
   algorithm: sha1
@@ -96,7 +96,7 @@ access_control:
 session:
   ## The name of the session cookie.
   name: authelia_session
-  domain: dev.awina.ch
+  domain: awina.ch
   ## https://www.authelia.com/c/session#same_site
   same_site: lax
 
