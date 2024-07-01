@@ -33,7 +33,7 @@ log:
   level: debug
 
 totp:
-  issuer: heytoki.com #your authelia top-level domain
+  issuer: dev.awina.ch #your authelia top-level domain
   period: 30
   digits: 6
   algorithm: sha1
@@ -88,15 +88,15 @@ access_control:
   default_policy: deny
   rules:
     - domain:
-        - "auth.heytoki.com"
+        - "dev-auth.awina.ch"
       policy: bypass
-    - domain: "studio.heytoki.com"
+    - domain: "dev-auth-studio.awina.ch"
       policy: two_factor
 
 session:
   ## The name of the session cookie.
   name: authelia_session
-  domain: heytoki.com
+  domain: dev.awina.ch
   ## https://www.authelia.com/c/session#same_site
   same_site: lax
 
