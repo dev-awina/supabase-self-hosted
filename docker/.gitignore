@@ -4,6 +4,7 @@ volumes/storage
 auth.env
 dev.env
 prod.env
+.creds
 
 test.http
 docker-compose.override.yml

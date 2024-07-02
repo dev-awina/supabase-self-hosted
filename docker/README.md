@@ -2,6 +2,20 @@
 
 This is a minimal Docker Compose setup for self-hosting Supabase. Follow the steps [here](https://supabase.com/docs/guides/hosting/docker) to get started.
 
+## Connect to VM
+`ssh ubuntu@<ip-address> -i ~/.ssh/id_ed25519_awina_flow_vm`
+
+`git clone https://github.com/dev-awina/supabase-self-hosted.git --depth=1` Don't forget the switch the custom docker compose branch. Currently you might be missing the branch due to default git config. So run these:
+
+- `git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"`
+- `git fetch --all`
+- `git checkout custom-docker-compose`
+
+## Install docker
+
+https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+
+
 
 
 ## Tutorial
@@ -33,3 +47,4 @@ For a two-factor setup with authelia you have to check the 'authelia/config/noti
 
 It needs to be decided on how to operate the web client. Either go with some kind of propreatiery web hosting like vercel or go with a docker compose setup also. In that case the docker should reference an image that needs to be uploaded to an accessible container registry beforehand automtically. Also the Github CICD would have to restart that container every time a new image is published... Let's see :)
 
+185.119.87.156
