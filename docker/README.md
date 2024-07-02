@@ -16,8 +16,6 @@ This is a minimal Docker Compose setup for self-hosting Supabase. Follow the ste
 https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
 
-
-
 ## Tutorial
 
 This setup follows the tutorial of activenode: https://blog.activeno.de/the-ultimate-supabase-self-hosting-guide
@@ -46,5 +44,3 @@ For a two-factor setup with authelia you have to check the 'authelia/config/noti
 ## Web Client setup
 
 It needs to be decided on how to operate the web client. Either go with some kind of propreatiery web hosting like vercel or go with a docker compose setup also. In that case the docker should reference an image that needs to be uploaded to an accessible container registry beforehand automtically. Also the Github CICD would have to restart that container every time a new image is published... Let's see :)
-
-185.119.87.156
