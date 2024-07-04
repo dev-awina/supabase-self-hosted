@@ -9,3 +9,18 @@ prod.env
 
 test.http
 docker-compose.override.yml
+
+
+
+# Files that get created on remote that we do not want
+authelia/config/db.sqlite3
+authelia/config/notification.txt
+nginx-data/database.sqlite
+nginx-data/keys.json
+nginx-data/nginx/proxy_host/*.conf
+nginx-letsencrypt/archive/**/*.pem
+nginx-letsencrypt/live/**/*.pem
+nginx-letsencrypt/renewal/*.conf
+nginx-letsencrypt/accounts/acme-v02.api.letsencrypt.org/directory/**/meta.json
+nginx-letsencrypt/accounts/acme-v02.api.letsencrypt.org/directory/**/private_key.json
+nginx-letsencrypt/accounts/acme-v02.api.letsencrypt.org/directory/**/regr.json
