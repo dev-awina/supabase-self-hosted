@@ -88,9 +88,9 @@ access_control:
   default_policy: deny
   rules:
     - domain:
-        - "dev-auth-studio.awina.ch"
+        - "auth-studio.awina.ch"
       policy: bypass
-    - domain: "dev-studio.awina.ch"
+    - domain: "studio.awina.ch"
       policy: two_factor
 
 session:

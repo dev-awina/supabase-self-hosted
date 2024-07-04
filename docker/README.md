@@ -16,8 +16,6 @@ This is a minimal Docker Compose setup for self-hosting Supabase. Follow the ste
 https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
 
-
-
 ## Tutorial
 
 This setup follows the tutorial of activenode: https://blog.activeno.de/the-ultimate-supabase-self-hosting-guide
@@ -57,5 +55,3 @@ This error occured when the Supabase Keys JWT_SECRET, ANON_KEY, SERVICE_ROLE_KEY
 #### Analytics does not start properly
 
 Analytics server is broken when it gets confused with pre existing data. Just remove all data: sudo rm -rf volumes/db/data/ (But this is actually not nice, you need to safe data beforehand) `sudo docker compose restart`
-
- 
