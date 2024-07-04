@@ -44,3 +44,14 @@ For a two-factor setup with authelia you have to check the 'authelia/config/noti
 ## Web Client setup
 
 It needs to be decided on how to operate the web client. Either go with some kind of propreatiery web hosting like vercel or go with a docker compose setup also. In that case the docker should reference an image that needs to be uploaded to an accessible container registry beforehand automtically. Also the Github CICD would have to restart that container every time a new image is published... Let's see :)
+
+
+## Pitfalls
+
+#### Storage is not accessible 
+
+This error occured when the Supabase Keys JWT_SECRET, ANON_KEY, SERVICE_ROLE_KEY have not been set properly. Go to docs and use the generated ones from there.
+
+#### Analytics does not start properly
+
+Analytics server is broken when it gets confused with pre existing data. Just remove all data: sudo rm -rf volumes/db/data/ (But this is actually not nice, you need to safe data beforehand) `sudo docker compose restart`
