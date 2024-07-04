@@ -1,7 +1,7 @@
 volumes/db/data
 volumes/storage
 .env
-auth.env
+**.auth.env
 dev.env
 prod.env
 .creds
