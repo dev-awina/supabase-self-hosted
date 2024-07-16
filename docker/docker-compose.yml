@@ -71,9 +71,9 @@ services:
       LOGFLARE_URL: http://analytics:4000
       NEXT_PUBLIC_ENABLE_LOGS: true
       # Comment to use Big Query backend for analytics
-      # NEXT_ANALYTICS_BACKEND_PROVIDER: postgres
+      NEXT_ANALYTICS_BACKEND_PROVIDER: postgres
       # Uncomment to use Big Query backend for analytics
-      NEXT_ANALYTICS_BACKEND_PROVIDER: bigquery
+      # NEXT_ANALYTICS_BACKEND_PROVIDER: bigquery
 
   kong:
     container_name: supabase-kong
@@ -347,11 +347,11 @@ services:
         # Disable this if you are using an external Postgres database
         condition: service_healthy
     # Uncomment to use Big Query backend for analytics
-    volumes:
-      - type: bind
-        source: ${PWD}/gcloud.json
-        target: /opt/app/rel/logflare/bin/gcloud.json
-        read_only: true
+    # volumes:
+    #   - type: bind
+    #     source: ${PWD}/gcloud.json
+    #     target: /opt/app/rel/logflare/bin/gcloud.json
+    #     read_only: true
     environment:
       LOGFLARE_NODE_HOST: 127.0.0.1
       DB_USERNAME: supabase_admin
@@ -366,12 +366,12 @@ services:
       LOGFLARE_MIN_CLUSTER_SIZE: 1
 
       # Comment variables to use Big Query backend for analytics
-      # POSTGRES_BACKEND_URL: postgresql://supabase_admin:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
-      # POSTGRES_BACKEND_SCHEMA: _analytics
-      # LOGFLARE_FEATURE_FLAG_OVERRIDE: multibackend=true
+      POSTGRES_BACKEND_URL: postgresql://supabase_admin:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
+      POSTGRES_BACKEND_SCHEMA: _analytics
+      LOGFLARE_FEATURE_FLAG_OVERRIDE: multibackend=true
       # Uncomment to use Big Query backend for analytics
-      GOOGLE_PROJECT_ID: ${GOOGLE_PROJECT_ID}
-      GOOGLE_PROJECT_NUMBER: ${GOOGLE_PROJECT_NUMBER}
+      # GOOGLE_PROJECT_ID: ${GOOGLE_PROJECT_ID}
+      # GOOGLE_PROJECT_NUMBER: ${GOOGLE_PROJECT_NUMBER}
     ports:
       - 4000:4000
 
