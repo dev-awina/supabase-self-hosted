@@ -6,6 +6,7 @@ auth.env
 dev.env
 prod.env
 .creds
+**.gcloud.json
 
 test.http
 docker-compose.override.yml
