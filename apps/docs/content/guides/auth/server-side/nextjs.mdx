@@ -417,7 +417,7 @@ Since this is a Router Handler, use the Supabase client from `@/utils/supabase/s
 
 ```ts app/auth/confirm/route.ts
 import { type EmailOtpType } from '@supabase/supabase-js'
-import { type NextRequest, NextResponse } from 'next/server'
+import { type NextRequest } from 'next/server'
 
 import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
@@ -627,7 +627,7 @@ export function createClient({ req, res }: GetServerSidePropsContext) {
     {
       cookies: {
         getAll() {
-          return Object.keys(req.cookies).map((name) => ({ name, value: req.cookies[name] }))
+          return Object.keys(req.cookies).map((name) => ({ name, value: req.cookies[name] || '' }))
         },
         setAll(cookiesToSet) {
           res.setHeader(
@@ -682,7 +682,7 @@ export default function createClient(req: NextApiRequest, res: NextApiResponse) 
     {
       cookies: {
         getAll() {
-          return Object.keys(req.cookies).map((name) => ({ name, value: req.cookies[name] }))
+          return Object.keys(req.cookies).map((name) => ({ name, value: req.cookies[name] || '' }))
         },
         setAll(cookiesToSet) {
           res.setHeader(

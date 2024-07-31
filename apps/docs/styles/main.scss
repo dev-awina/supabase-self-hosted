@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 @import './../../../packages/ui/build/css/source/global.css';
-@import './../../../packages/ui/build/css/themes/dark.css';
-@import './../../../packages/ui/build/css/themes/deep-dark.css';
+@import './../../../packages/ui/build/css/themes/dark-combined.css';
 @import './../../../packages/ui/build/css/themes/light.css';
 
 @font-face {
@@ -335,4 +334,3 @@ th code {
     background-position: 1000px 0;
   }
 }
-
