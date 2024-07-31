@@ -55,3 +55,14 @@ This error occured when the Supabase Keys JWT_SECRET, ANON_KEY, SERVICE_ROLE_KEY
 #### Analytics does not start properly
 
 Analytics server is broken when it gets confused with pre existing data. Just remove all data: sudo rm -rf volumes/db/data/ (But this is actually not nice, you need to safe data beforehand) `sudo docker compose restart`
+
+
+
+#### Reset database
+
+1. Dump data from the db like this:  
+`npx supabase db dump -s public -f supabase/seed.sql --db-url "postgres://postgres:{{pw}}@{{ip}}:5432/postgres"`
+2. Stop all containers like this: `sudo docker compose -f docker-compose.yml -f docker-compose.s3.yml down`
+2. Remove all the db volumes like this: `cd volumes/db && sudo rm -rf /data && cd ../..`
+2. Start all containers again like this: `sudo docker compose -f docker-compose.yml -f docker-compose.s3.yml up -d`
+3. Restart all containers and push the dumped data again: `npx supabase db push --include-seed --db-url "postgres://postgres:${{ secrets.POSTGRES_PASSWORD_PROD }}@${{ secrets.SERVER_IP_PROD }}:5432/postgres`
